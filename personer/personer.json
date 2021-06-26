@@ -1,14 +1,1 @@
-{
-    "personer":[
-        {"namn":"Robert", "bilder":["./personer/robert.jpg"],"position":[1380,700]},
-        {"namn":"Tilda", "bilder":["./personer/tilda.jpg"],"position":[750,300]},
-        {"namn":"Tuure", "bilder":["./personer/tuure.jpg"],"position":[700,650]},
-        {"namn":"Alina", "bilder":["./personer/alina.jpg"],"position":[1350,830]},
-        {"namn":"Iivar", "bilder":["./personer/iivar.jpg"],"position":[1130,300]},
-        {"namn":"Elmer", "bilder":["./personer/elmer.jpg"],"position":[1400,880]},
-        {"namn":"Hedda", "bilder":["./personer/hedda.jpg"],"position":[1400,830]},
-        {"namn":"Valde", "bilder":["./personer/valde.jpg"],"position":[1350,780]},
-        {"namn":"Mattis", "bilder":["./personer/mattis.jpg"],"position":[1350,880]},
-        {"namn":"Elna", "bilder":["./personer/elna.jpg"],"position":[1300,830]}
-    ]
-}
+{"personer":[{"namn":"Robert","bilder":["./personer/robert.jpg"],"position":[1380,700]},{"namn":"Tilda","bilder":["./personer/tilda.jpg"],"position":[750,300]},{"namn":"Tuure","bilder":["./personer/tuure.jpg"],"position":[700,650]},{"namn":"Alina","bilder":["./personer/alina.jpg"],"position":[1350,830]},{"namn":"Iivar","bilder":["./personer/iivar.jpg"],"position":[1130,300]},{"namn":"Elmer","bilder":["./personer/elmer.jpg"],"position":[1400,880]},{"namn":"Hedda","bilder":["./personer/hedda.jpg"],"position":[1400,830]},{"namn":"Valde","bilder":["./personer/valde.jpg"],"position":[1350,780]},{"namn":"Mattis","bilder":["./personer/mattis.jpg"],"position":[1350,880]},{"namn":"Elna","bilder":["./personer/elna.jpg"],"position":[1300,830]}]}

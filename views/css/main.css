@@ -86,21 +86,45 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+*{
+  margin: 0;
+}
 body {
   height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.person-bilder{
+  position: absolute;
+  z-index: 3;
+  width: 5%;
+}
+#header{
+  text-align: center;
+  background-color: lightblue;
+  width: 100%;
+}
+#image{
+  position: relative;
+  text-align: center;
+  width: auto;
 
+}
+#footer{
+  text-align: center;
+  width: 100%;
+}
 img{
-  margin-top: 10em;
-  width: 50%;
+  width: 100%;
+  max-width: 750px;
 }
 
 #body{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  margin-top: 10em;
+
 }
 /* ==========================================================================
    Helper classes
