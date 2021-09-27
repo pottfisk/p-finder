@@ -25,9 +25,14 @@ app.get('/location', (req, res) => {
 var htmlPath = path.join(__dirname, "views")
 app.use(express.static(htmlPath))
 //define the route for "/"
-var server = app.listen(3000, '192.168.1.240', function () {
-    var host = '192.168.1.240';
+var server = app.listen(3000, '192.168.1.109', function () {
+    var host = '192.168.1.109';
     var port = server.address().port;
-    console.log('listening on http://'+host+':'+port+'/');
 });
-app.post
+app.post('/request',(req,res) => {
+    fs.writeFile(__dirname + '/personer/personer.json',JSON.stringify(req.body),function(err){
+    	if(err){
+    	    console.log(err)
+    	}
+    })
+});

@@ -89,6 +89,13 @@ textarea {
 *{
   margin: 0;
 }
+
+#button{
+    background-color: lightblue;
+    width: 50%;
+    height: 3em;
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -101,6 +108,7 @@ body {
   position: absolute;
   z-index: 3;
   width: 5%;
+  touch-action: none;
 }
 #header{
   text-align: center;
