@@ -90,10 +90,64 @@ textarea {
   margin: 0;
 }
 
-#button{
+.button{
+    margin-top: 1em;
     background-color: lightblue;
     width: 50%;
     height: 3em;
+    text-align:center;
+    border: 2px solid black;
+}
+.button:hover {
+    cursor: pointer;
+}
+
+.name{
+    text-align:center;
+    border-right: 2px solid black;
+    height: inherit;
+    min-width: 4em;
+  
+}
+.setting_pics{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    font-size: 2em;
+    height: 15vh;
+    margin-top:1em;
+    background-color: lightblue;
+    overflow: auto;
+}
+.pics{
+    display: flex;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration:none;
+    color: black;
+}
+
+#settingbody{
+}
+
+#show_persons {
+    display: flex;
+    flex-direction: column;
+}
+
+#show_persons img{
+    width: 10vh;
+    margin-left: 1em;
+    
+}
+#form{
+    margin-top: auto;
 }
 
 body {
@@ -128,11 +182,20 @@ body {
 img{
   width: 100%;
   max-width: 750px;
+  border-radius: 50%;
 }
 
 #body{
   margin-top: 10em;
 
+}
+
+.selected{
+    border: 5px solid green;
+}
+
+.notSelected{
+    border: 2px solid black;
 }
 /* ==========================================================================
    Helper classes

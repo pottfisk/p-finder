@@ -2,6 +2,10 @@ var express = require("express");
 var path = require('path')
 const bodyParser = require('body-parser');
 const fs = require('fs')
+const multer = require('multer');
+
+const upload = multer({dest: __dirname + '/uploads/images'});
+
 //use the application off of express.
 var app = express();
 app.use(express.static(__dirname));
@@ -35,4 +39,7 @@ app.post('/request',(req,res) => {
     	    console.log(err)
     	}
     })
+});
+
+app.post('/upload', upload.single('photo'), (req, res) => {
 });

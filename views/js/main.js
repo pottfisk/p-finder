@@ -1,9 +1,45 @@
 var ip = location.host;
 var src="http://" + ip + "/kartor/karta_hd.png";
+var globalData;
+document.addEventListener("DOMContentLoaded", function(){
+    var div = document.getElementById('show_persons');
+    
+
+    jQuery.get('location',function(data){
+	globalData = data;
+	data.personer.forEach(element => {
+	    $("#show_persons").prepend('<div class="setting_pics" > <div class="name">' + element['namn']+'</div> <div class="pics" id='+element['namn']+'>' +'</div></div>');
+	    element['bilder'].forEach(el =>{
+		if(el == element['selected']){
+		    $('#'+element['namn']).prepend('<img class="selected ' + element['namn'] +'" onclick=changePic("'+el+'","'+element['namn']+ '") src="' + el + '"/>')
+		}
+		else{
+		    $('#'+element['namn']).prepend('<img class="notSelected '+ element['namn']+'" onclick=changePic("'+el+'","'+element['namn']+ '") src="' + el + '"/>')}
+	    }); 
+	    
+	});
+    });
+});
+
+function changePic(image,name){
+    globalData.personer.forEach(element =>{
+	if(element['namn'] == name){
+	    element['selected'] = image;
+	    $('.selected.'+name).css('border','2px solid black');
+	    $('.notSelected.'+name).css('border','5px solid green');
+	    var sclass = $('.selected.'+name);
+	    var nclass = $('.notSelected.'+name);
+	    sclass.removeClass("selected");
+	    sclass.addClass("notSelected");
+	    nclass.addClass("selected");
+	    nclass.removeClass("notSelected");	    
+	}
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     var img = document.getElementById('karta').src = src;
     
-
     jQuery.get('location',function(data){
 	globalData = data;
 	data.personer.forEach(element => {
@@ -17,8 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	    var width = kartWidth/bodyWidth
 	    var height = kartHeight/bodyHeight
 	    console.log(kartWidth,kartHeight)
-
-	    $("#image").prepend('<div class="person-bilder" id="' + element['namn'] + '" style="top:' + (element['position'][0]*kartHeight) + 'px; left:' + (element['position'][1]*kartWidth) + 'px;"> <img src="' + element['bilder'][0] + '"/></div>')
+	    $("#image").prepend('<div class="person-bilder" id="' + element['namn'] + '" style="top:' + (element['position'][0]*kartHeight) + 'px; left:' + (element['position'][1]*kartWidth) + 'px;"> <img src="' + element['selected'] + '"/></div>')
 	    var offset = [0,0];
 	    var divOverlay = document.getElementById(element['namn']);
 	    var kartapos = document.getElementById('karta').getBoundingClientRect();
